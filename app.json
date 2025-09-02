@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "Aider (Kakao Style)",
+    "slug": "aider-kakao-style",
+    "scheme": "aider",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FEE500"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FEE500"
+      },
+      "package": "com.example.aiderkakao"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
