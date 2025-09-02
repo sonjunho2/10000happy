@@ -11,24 +11,19 @@
       "resizeMode": "contain",
       "backgroundColor": "#FEE500"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": false
-    },
+    "updates": { "fallbackToCacheTimeout": 0 },
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": false },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FEE500"
-      },
+      "adaptiveIcon": { "foregroundImage": "./assets/adaptive-icon.png", "backgroundColor": "#FEE500" },
       "package": "com.example.aiderkakao"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "web": { "favicon": "./assets/favicon.png" },
+
+    "extra": {
+      "eas": {
+        "projectId": "3231fa19-1657-43f9-a4f6-995512ea82c0"
+      }
     }
   }
 }
