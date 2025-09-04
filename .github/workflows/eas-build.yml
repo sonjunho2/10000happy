@@ -1,4 +1,4 @@
-name: EAS Android APK
+name: EAS Android Build (manual)
 
 on:
   workflow_dispatch: {}   # 수동 실행만
@@ -6,30 +6,21 @@ on:
 jobs:
   build-android:
     runs-on: ubuntu-latest
-    env:
-      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-      NODE_ENV: production            # Metro 경고 차단
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: 20
+          cache: 'none'   # lock 파일 없어도 에러 안 나게
 
       - name: Install EAS CLI
-        run: npm install -g eas-cli
+        run: npm i -g eas-cli
 
-      - name: Align Expo SDK deps (best-effort)
-        run: npx --yes expo install --fix || true
+      - name: Install deps (no lock)
+        run: npm install --no-audit --no-fund --legacy-peer-deps
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Android APK (preview)
-        run: npx --yes eas-cli build -p android --profile preview --non-interactive
-
-      - name: Show latest finished build
-        run: npx --yes eas-cli build:list --status finished --limit 1
+      - name: EAS Android APK build (preview)
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        run: eas build -p android --profile preview --non-interactive
