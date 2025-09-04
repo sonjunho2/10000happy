@@ -5,26 +5,14 @@
     "scheme": "aider",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#FEE500"
-    },
-    "assetBundlePatterns": ["**/*"],
+
     "ios": { "supportsTablet": false },
     "android": {
-      "package": "com.example.aiderkakao",
-      "versionCode": 1,
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FEE500"
-      }
+      "package": "com.example.aiderkakao"
     },
-    "web": { "favicon": "./assets/favicon.png" },
-    "extra": {
-      "eas": { "projectId": "3231fa19-1657-43f9-a4f6-995512ea82c0" }
-    },
+    "web": {},
+
+    "extra": { "eas": { "projectId": "3231fa19-1657-43f9-a4f6-995512ea82c0" } },
     "updates": { "enabled": false },
     "newArchEnabled": false
   }
