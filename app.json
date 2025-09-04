@@ -3,7 +3,7 @@
     "name": "Aider (Kakao Style)",
     "slug": "10000happy",
     "scheme": "aider",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -11,23 +11,21 @@
       "resizeMode": "contain",
       "backgroundColor": "#FEE500"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
     "assetBundlePatterns": ["**/*"],
     "ios": { "supportsTablet": false },
     "android": {
+      "package": "com.aider.manwonhappiness",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FEE500"
-      },
-      "package": "com.example.aiderkakao",
-      "versionCode": 1
+      }
     },
     "web": { "favicon": "./assets/favicon.png" },
     "extra": {
       "eas": { "projectId": "3231fa19-1657-43f9-a4f6-995512ea82c0" }
     },
-    "newArchEnabled": false          // ✅ 이 줄 추가
+    "updates": { "enabled": false },
+    "newArchEnabled": false
   }
 }
