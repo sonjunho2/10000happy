@@ -14,7 +14,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": { "supportsTablet": false },
     "android": {
-      "package": "com.aider.manwonhappiness",
+      "package": "com.example.aiderkakao",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
