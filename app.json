@@ -1,29 +1,18 @@
 {
   "expo": {
-    "name": "10000happy",
-    "slug": "10000happy",
-    "scheme": "aider",
-    "version": "0.1.0",
+    "name": "만원의행복",
+    "slug": "manwon-happiness",
+    "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#FEE500"
-    },
-    "updates": { "fallbackToCacheTimeout": 0 },
-    "assetBundlePatterns": ["**/*"],
-    "ios": { "supportsTablet": false },
+    "newArchEnabled": true,
+    "platforms": ["ios", "android", "web"],
     "android": {
-      "adaptiveIcon": { "foregroundImage": "./assets/adaptive-icon.png", "backgroundColor": "#FEE500" },
-      "package": "com.example.aiderkakao"
+      "package": "com.aider.manwonhappiness",
+      "versionCode": 1
     },
-    "web": { "favicon": "./assets/favicon.png" },
-
-    "extra": {
-      "eas": {
-        "projectId": "3231fa19-1657-43f9-a4f6-995512ea82c0"
-      }
+    "updates": {
+      "url": "",
+      "enabled": false
     }
   }
 }
