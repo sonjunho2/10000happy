@@ -1,4 +1,5 @@
-// 관리 서버 연결 설정
-export const BASE_URL = 'https://YOUR-MANAGEMENT-SERVER.example.com/api'; // <- 실제 주소로 교체
-// USE_MOCK=true면 관리 서버가 없어도 더미 데이터로 앱이 동작합니다.
-export const USE_MOCK = true;
+//src/config/env.ts
+export const ENV = {
+  // 실서버 있으면 넣기. 비워두면 자동으로 목업 데이터 사용.
+  API_BASE_URL: ""
+};
