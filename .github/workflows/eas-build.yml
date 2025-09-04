@@ -27,5 +27,6 @@ jobs:
       - name: Build Android APK (preview)
         run: eas build -p android --profile preview --non-interactive
 
-      - name: Show latest finished build
-        run: eas build:list --status finished --limit 1
+      - name: Show latest finished build (no prompt)
+        run: eas build:list --status finished --limit 1 --non-interactive --json || true
+
