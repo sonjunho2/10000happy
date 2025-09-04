@@ -1,10 +1,7 @@
 {
   "build": {
     "preview": {
-      "android": {
-        "buildType": "apk",
-        "gradleCommand": ":app:assembleUniversalRelease"
-      }
+      "android": { "buildType": "apk" }
     }
   },
   "cli": { "appVersionSource": "remote" }
