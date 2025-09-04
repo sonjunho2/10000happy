@@ -1,8 +1,5 @@
 {
   "expo": {
-        "runtimeVersion": { "policy": "sdkVersion" },
-    "updates": { "url": "https://u.expo.dev/3231fa19-1657-43f9-a4f6-995512ea82c0" }
-  }
     "name": "10000happy",
     "slug": "10000happy",
     "scheme": "aider",
@@ -14,7 +11,6 @@
       "resizeMode": "contain",
       "backgroundColor": "#FEE500"
     },
-    "updates": { "fallbackToCacheTimeout": 0 },
     "assetBundlePatterns": ["**/*"],
     "ios": { "supportsTablet": false },
     "android": {
@@ -25,6 +21,11 @@
       }
     },
     "web": { "favicon": "./assets/favicon.png" },
+    "runtimeVersion": { "policy": "sdkVersion" },
+    "updates": {
+      "url": "https://u.expo.dev/3231fa19-1657-43f9-a4f6-995512ea82c0",
+      "fallbackToCacheTimeout": 0
+    },
     "extra": {
       "eas": { "projectId": "3231fa19-1657-43f9-a4f6-995512ea82c0" }
     }
