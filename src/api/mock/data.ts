@@ -1,33 +1,21 @@
-import { User, Dream, ChatSummary, Message } from '../endpoints';
-
-export const user: User = {
-  id: 'u1',
-  nickname: 'sonoo2',
-  point: 13240000,
-  avatar: undefined,
+//src/api/mock/data.ts
+export type Post = {
+  id: string; title: string; body: string; author: string;
+  createdAt: string; views: number; likes: number; commentsCount: number;
+};
+export type Comment = {
+  id: string; postId: string; body: string; author: string; createdAt: string;
 };
 
-export const dreams: Dream[] = [
-  { id: 'd1', title: '가족과 제주도 여행가고 싶어요', current: 10000, goal: 78100000 },
-  { id: 'd2', title: '나만의 공방을 열고 싶어요', current: 20000, goal: 78100000 },
-];
+const now = () => new Date().toISOString();
+const rid = () => `${Date.now()}_${Math.random().toString(16).slice(2)}`;
 
-export const chats: ChatSummary[] = [
-  { id: 'c1', name: '운영팀 공지', lastMessage: '환영합니다. 1만원으로 시작해요!', unread: 2 },
-  { id: 'c2', name: '나의 추천인', lastMessage: '이번 주 진행상황 공유합니다', unread: 0 },
-  { id: 'c3', name: '지원/문의', lastMessage: '무엇을 도와드릴까요?', unread: 3 },
-];
-
-export const messages: Record<string, Message[]> = {
-  c1: [
-    { id: 'm1', author: 'other', text: '환영합니다 👋', at: new Date().toISOString() },
-    { id: 'm2', author: 'other', text: '1만원으로 시작하는 꿈의 여정!', at: new Date().toISOString() },
-  ],
-  c2: [
-    { id: 'm3', author: 'other', text: '이번 주엔 3명이 등록했습니다.', at: new Date().toISOString() },
-  ],
-  c3: [
-    { id: 'm4', author: 'me', text: '도움이 필요합니다.', at: new Date().toISOString() },
-    { id: 'm5', author: 'other', text: '무엇이 궁금하신가요?', at: new Date().toISOString() },
-  ],
+export const MOCK = {
+  posts: [
+    { id: 'p1', title: '심심할 때 만나서 같이 노실 분~~~🐥', body: '동네친구처럼 카페/보드게임/야구장 등 같이 놀아요!', author: '율이', createdAt: now(), views: 224, likes: 2, commentsCount: 1 },
+    { id: 'p2', title: '성인 영어회화 배워본 적 있으신분 계실까요ㅎㅎ', body: '40대지만 버킷리스트라 꼭 도전!', author: '두암1동', createdAt: now(), views: 19, likes: 0, commentsCount: 0 }
+  ] as Post[],
+  comments: [
+    { id: rid(), postId: 'p1', body: '저도 보드게임 좋아해요!', author: '익명', createdAt: now() }
+  ] as Comment[]
 };
