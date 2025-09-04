@@ -14,12 +14,8 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": false
-    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": false },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -28,13 +24,10 @@
       "package": "com.example.aiderkakao",
       "versionCode": 1
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
+    "web": { "favicon": "./assets/favicon.png" },
     "extra": {
-      "eas": {
-        "projectId": "3231fa19-1657-43f9-a4f6-995512ea82c0"
-      }
-    }
+      "eas": { "projectId": "3231fa19-1657-43f9-a4f6-995512ea82c0" }
+    },
+    "newArchEnabled": false          // ✅ 이 줄 추가
   }
 }
