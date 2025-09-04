@@ -4,15 +4,15 @@
     "slug": "manwon-happiness",
     "version": "1.0.0",
     "orientation": "portrait",
-    "newArchEnabled": true,
     "platforms": ["ios", "android", "web"],
+    "newArchEnabled": true,
     "android": {
       "package": "com.aider.manwonhappiness",
       "versionCode": 1
     },
-    "updates": {
-      "url": "",
-      "enabled": false
-    }
+    "extra": {
+      "eas": { "projectId": "3231fa19-1657-43f9-a4f6-995512ea82c0" }
+    },
+    "updates": { "enabled": false }
   }
 }
