@@ -1,19 +1,30 @@
-name: Align deps to Expo SDK
-run: npx --yes expo install --check || true
+name: EAS Android APK
 
 on:
-  workflow_dispatch: {}   # 수동 실행 버튼
+  workflow_dispatch: {}          # 수동 실행
   push:
-    branches: [ "main" ]  # main으로 푸시될 때 자동 실행
+    branches: [ "main" ]        # main 푸시에 자동 실행
 
 jobs:
   build-android:
     runs-on: ubuntu-latest
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}   # 깃허브 시크릿에 넣어둔 토큰 사용
     steps:
-      - uses: actions/checkout@v3
-      - run: npm install -g eas-cli
-      - run: npm install
-      - name: EAS Android APK build (preview)
-        run: eas build -p android --profile preview
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Android APK (preview)
+        run: npx --yes eas-cli build -p android --profile preview --non-interactive
+
+      - name: Show latest finished build
+        run: npx --yes eas-cli build:list --status finished --limit 1
