@@ -6,21 +6,26 @@ on:
 jobs:
   build-android:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
-      - uses: actions/setup-node@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'none'   # lock 파일 없어도 에러 안 나게
+          node-version: 20        # ❌ cache 옵션 넣지 않음
 
       - name: Install EAS CLI
         run: npm i -g eas-cli
 
-      - name: Install deps (no lock)
+      - name: Install deps
         run: npm install --no-audit --no-fund --legacy-peer-deps
 
-      - name: EAS Android APK build (preview)
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      - name: Build Android APK (preview)
         run: eas build -p android --profile preview --non-interactive
+
+      - name: Show latest finished build
+        run: eas build:list --status finished --limit 1
