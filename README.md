@@ -22,6 +22,16 @@ npm run android
   - `GET /chats/:id/messages` → 메시지 리스트
   - `POST /chats/:id/messages` { text } → 메시지 전송
 
+### 설치 오류 해결
+`lucide-react-native`가 아직 React 19를 정식으로 지원하지 않아 `npm ci`나 `npm install` 실행 시 피어 의존성 오류가 발생할 수 있습니다. 아래와 같이 `--legacy-peer-deps` 플래그를 사용해 설치를 진행하세요.
+
+```bash
+npm install --legacy-peer-deps
+```
+
+EAS 빌드 시에도 `NPM_FLAGS=--legacy-peer-deps` 환경 변수를 설정해 동일한 플래그를 전달합니다.
+
+
 ## 빌드 (APK)
 - Expo EAS 사용 권장
 ```bash
