@@ -3,10 +3,21 @@ import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, Pressable, TextInput, SafeAreaView
 } from 'react-native';
-import {
-  Heart, MessageCircle, Users, Plus, Star, Trophy, ArrowLeft,
-  Bell, Gift, Send, TrendingUp, Copy
-} from 'lucide-react-native';
+import { Feather } from '@expo/vector-icons';
+
+type FeatherProps = React.ComponentProps<typeof Feather>;
+const Heart = (props: FeatherProps) => <Feather name="heart" {...props} />;
+const MessageCircle = (props: FeatherProps) => <Feather name="message-circle" {...props} />;
+const Users = (props: FeatherProps) => <Feather name="users" {...props} />;
+const Plus = (props: FeatherProps) => <Feather name="plus" {...props} />;
+const Star = (props: FeatherProps) => <Feather name="star" {...props} />;
+const Trophy = (props: FeatherProps) => <Feather name="award" {...props} />;
+const ArrowLeft = (props: FeatherProps) => <Feather name="arrow-left" {...props} />;
+const Bell = (props: FeatherProps) => <Feather name="bell" {...props} />;
+const Gift = (props: FeatherProps) => <Feather name="gift" {...props} />;
+const Send = (props: FeatherProps) => <Feather name="send" {...props} />;
+const TrendingUp = (props: FeatherProps) => <Feather name="trending-up" {...props} />;
+const Copy = (props: FeatherProps) => <Feather name="copy" {...props} />;
 
 export default function MoneyMultiplierScreen() {
   const [currentPage, setCurrentPage] = useState<'home'|'support'|'success'|'community'|'invite'|'noti'>('home');
