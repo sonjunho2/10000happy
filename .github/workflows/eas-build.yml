@@ -6,8 +6,6 @@ on:
 jobs:
   build-android:
     runs-on: ubuntu-latest
-    env:
-      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
     steps:
       - name: Checkout
@@ -16,17 +14,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20        # ❌ cache 옵션 넣지 않음
+          node-version: 20        # 캐시 설정 안 함
 
       - name: Install EAS CLI
         run: npm i -g eas-cli
 
-      - name: Install deps
-        run: npm install --no-audit --no-fund --legacy-peer-deps
+      # 로컬 npm install은 생략 (원격 EAS 빌드에서 설치함)
 
       - name: Build Android APK (preview)
         run: eas build -p android --profile preview --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          NPM_FLAGS: --legacy-peer-deps   # 원격 빌드에서 npm 설치 시 적용
+          NODE_ENV: production            # 빌드 로그의 NODE_ENV 경고 제거
 
       - name: Show latest finished build (no prompt)
         run: eas build:list --status finished --limit 1 --non-interactive --json || true
-
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
